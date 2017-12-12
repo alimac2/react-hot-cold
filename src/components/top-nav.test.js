@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
 import TopNav from './top-nav';
 
@@ -14,12 +14,15 @@ describe('<TopNav />', () => {
     });
 
     it('Should restart the game when the New Game link is clicked', () => {
-        const wrapper = shallow(<TopNav />);
+        const callback = jest.fn();
+        const wrapper = mount(<TopNav onNewGame={callback} />);
+        // wrapper.instance().setEditing(true);
+        // wrapper.update();
+        // wrapper.find('input[type="text"]').instance().value = value;
         wrapper.simulate('click');
-        expect(wrapper.state('editing')).toEqual(true);
+        expect(callback).toHaveBeenCalledWith();
     });
-
-    /* not sure what to do here */
+    /* not sure what to do here. The state should  */
 
 
 
