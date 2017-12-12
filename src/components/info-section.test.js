@@ -7,4 +7,10 @@ describe('<InfoSection/>', () => {
     it('Renders without crashing', () => {
         shallow(<InfoSection />);
     });
+
+    it('Renders the game information', () => {
+        const wrapper = shallow(<InfoSection />);
+        expect(wrapper.hasId('what')).toEqual(true);
+    });
+
 });
