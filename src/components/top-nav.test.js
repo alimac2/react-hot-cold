@@ -8,22 +8,21 @@ describe('<TopNav />', () => {
         shallow(<TopNav />);
     });
 
-    it('Renders the top links initially', () => {
-        const wrapper = shallow(<TopNav />);
-        expect(wrapper.hasClass('clearfix')).toEqual(true);
-    });
-
     it('Should restart the game when the New Game link is clicked', () => {
         const callback = jest.fn();
-        const wrapper = mount(<TopNav onNewGame={callback} />);
-        // wrapper.instance().setEditing(true);
-        // wrapper.update();
-        // wrapper.find('input[type="text"]').instance().value = value;
-        wrapper.simulate('click');
-        expect(callback).toHaveBeenCalledWith();
+        const wrapper = mount(<TopNav onRestartGame={callback} />);
+        const link = wrapper.find(".new");
+        link.simulate('click', {preventDefault(){}});
+        expect(callback).toHaveBeenCalled();
     });
     /* not sure what to do here. The state should  */
-
+    it('Should generate an aural update', () => {
+        const callback = jest.fn();
+        const wrapper = mount(<TopNav onGenerateAuralUpdate={callback} />);
+        const link = wrapper.find(".status-link");
+        link.simulate('click', {preventDefault(){}});
+        expect(callback).toHaveBeenCalled();
+    });
 
 
 });
