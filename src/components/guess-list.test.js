@@ -9,7 +9,7 @@ describe('<GuessList />', () => {
     });
 
     it('Should show a list of guesses made by user', () => {
-        const wrapper = shallow(<GuessList />);
-        
+        const wrapper = shallow(<GuessList guesses={} />);
+        expect(wrapper.find('li').length).toEqual(true)
     });
 });

@@ -8,9 +8,9 @@ describe('<InfoSection/>', () => {
         shallow(<InfoSection />);
     });
 
-    it('Renders the game information', () => {
-        const wrapper = shallow(<InfoSection />);
-        expect(wrapper.hasId('what')).toEqual(true);
-    });
+    // it('Renders the game information initially', () => {
+    //     const wrapper = shallow(<InfoSection />);
+    //     expect(wrapper.hasId('what')).toEqual(true);
+    // });
 
 });
