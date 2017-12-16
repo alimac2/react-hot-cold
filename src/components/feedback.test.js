@@ -9,7 +9,9 @@ describe('<Feedback />', () => {
     });
 
     it('Should render feedback to user', () => {
-     const wrapper = shallow(<Feedback />);
+        const TEST_FEEDBACK ="This is a test";
+        const wrapper = shallow(<Feedback feedback={TEST_FEEDBACK} />);
+        expect(wrapper.contains(TEST_FEEDBACK)).toEqual(true);
     });
 
 });
