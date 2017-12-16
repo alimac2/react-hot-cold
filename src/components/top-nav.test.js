@@ -23,6 +23,4 @@ describe('<TopNav />', () => {
         link.simulate('click', {preventDefault(){}});
         expect(callback).toHaveBeenCalled();
     });
-
-
 });

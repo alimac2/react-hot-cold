@@ -7,4 +7,9 @@ describe('<Feedback />', () => {
     it('Renders without crashing', () => {
         shallow(<Feedback />);
     });
+
+    it('Should render feedback to user', () => {
+     const wrapper = shallow(<Feedback />);
+    });
+
 });

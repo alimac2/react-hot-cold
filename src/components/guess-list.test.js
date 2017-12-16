@@ -7,4 +7,9 @@ describe('<GuessList />', () => {
     it('Renders without crashing', () => {
         shallow(<GuessList />);
     });
+
+    it('Should show a list of guesses made by user', () => {
+        const wrapper = shallow(<GuessList />);
+        
+    });
 });
