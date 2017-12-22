@@ -1,9 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import Header from './header';
 import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
+
+import {} from '../actions';
+
 
 export default class Game extends React.Component {
   constructor(props) {
@@ -101,3 +105,10 @@ export default class Game extends React.Component {
     );
   }
 }
+
+
+export const mapStateToProps = state => ({
+
+});
+
+export default connect(mapStateToProps)(Game);
