@@ -7,6 +7,7 @@ import './reset.css';
 import './index.css';
 
 import Game from './components/game';
+console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
