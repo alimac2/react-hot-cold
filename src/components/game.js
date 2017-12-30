@@ -19,14 +19,14 @@ export default class Game extends React.Component {
     };
   }
 
-  restartGame() {
-    this.setState({
-      guesses: [],
-      feedback: 'Make your guess!',
-      auralStatus: '',
-      correctAnswer: Math.floor(Math.random() * 100) + 1
-    });
-  }
+  // restartGame() {
+  //   this.setState({
+  //     guesses: [],
+  //     feedback: 'Make your guess!',
+  //     auralStatus: '',
+  //     correctAnswer: Math.floor(Math.random() * 100) + 1
+  //   });
+  // }
 
   makeGuess(guess) {
     guess = parseInt(guess, 10);
