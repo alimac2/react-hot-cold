@@ -60,6 +60,7 @@ export default class Game extends React.Component {
     // which is good for giving screen-reader users
     // instant information about the app.
     document.title = feedback ? `${feedback} | Hot or Cold` : 'Hot or Cold';
+    /*------WHAT SHOULD I DO WITH THIS?-------*/
   }
 
   generateAuralUpdate() {
