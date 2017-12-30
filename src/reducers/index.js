@@ -7,8 +7,6 @@ const initialState = {
     correctAnswer: Math.round(Math.random() * 100) + 1
 };
 
-
-
 export default function gameReducer(state=initialState, action) {
     if (action.type === MAKE_GUESS ) {
         const guessArr = [...state.guesses, action.guess];
@@ -21,10 +19,8 @@ export default function gameReducer(state=initialState, action) {
 
         guess = parseInt(guess, 10);
         if (isNaN(guess)) {
-          feedback: 'Please enter a valid number' };
-          return;
-        }
-
+            feedback = 'Please enter a valid number';
+        };
 
         const difference = Math.abs(guess - this.state.correctAnswer);
     
@@ -42,7 +38,8 @@ export default function gameReducer(state=initialState, action) {
         }
 
         return Object.assign({}, state, { 
-            guesses: guessArr
+            guesses: guessArr,
+            feedback
         });
     }
 
@@ -75,7 +72,6 @@ export default function gameReducer(state=initialState, action) {
             auralStatus
         });
     }
-
 
     return state;
 };
