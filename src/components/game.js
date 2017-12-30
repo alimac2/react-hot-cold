@@ -91,13 +91,9 @@ export default class Game extends React.Component {
         />
         <main role="main">
           <GuessSection
-            feedback={feedback}
-            guessCount={guessCount}
             onMakeGuess={guess => this.makeGuess(guess)}
           />
-          <StatusSection 
-            auralStatus={auralStatus}
-          />
+          <StatusSection />
           <InfoSection />
         </main>
       </div>
