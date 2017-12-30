@@ -21,6 +21,7 @@ export default function TopNav(props) {
             className="new"
             aria-label="Start a new game"
             onClick={() => props.onRestartGame()}
+            /*props.dispatch(restartGame()) */
           >
             + New Game
           </a>
@@ -32,6 +33,7 @@ export default function TopNav(props) {
             while leaving it available to screen reader users  */
             className="visuallyhidden focusable status-link"
             onClick={() => props.onGenerateAuralUpdate()}
+             /*props.dispatch(generateAuralUpdate()) */
           >
             Hear state of game
           </a>
