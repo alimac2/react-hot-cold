@@ -21,4 +21,4 @@ export const generateAuralUpdate = () => ({
     type: GENERATE_AURAL_UPDATE,
     auralStatus
 });
-/* should auralStatus be here? I don't understand why? */
+/* should auralStatus be here? I don't understand why or why not. */
