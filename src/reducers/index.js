@@ -13,32 +13,66 @@ export default function gameReducer(state=initialState, action) {
     if (action.type === MAKE_GUESS ) {
         const guessArr = [...state.guesses, action.guess];
         
+        // guess = parseInt(guess, 10);
+        // if (isNaN(guess)) {
+        //   this.setState({ feedback: 'Please enter a valid number' });
+        //   return;
+        // }
+
+        guess = parseInt(guess, 10);
+        if (isNaN(guess)) {
+          feedback: 'Please enter a valid number' };
+          return;
+        }
+
+
+        const difference = Math.abs(guess - this.state.correctAnswer);
+    
+        let feedback;
+        if (difference >= 50) {
+          feedback = 'You\'re Ice Cold...';
+        } else if (difference >= 30) {
+          feedback = 'You\'re Cold...';
+        } else if (difference >= 10) {
+          feedback = 'You\'re Warm.';
+        } else if (difference >= 1) {
+          feedback = 'You\'re Hot!';
+        } else {
+          feedback = 'You got it!';
+        }
+
         return Object.assign({}, state, { 
             guesses: guessArr
         });
     }
 
-    // if (action.type === RESTART_GAME) {
-    //     return Object.assign({}, state, {
-    //         guesses: [],
-    //         feedback: 'Make your guess!',
-    //         auralStatus: '',
-    //         correctAnswer: Math.round(Math.random() * 100) + 1
-    //     });
-    // }
+
+
+    if (action.type === RESTART_GAME) {
+        return Object.assign({}, state, {
+            guesses: [],
+            feedback: 'Make your guess!',
+            auralStatus: '',
+            correctAnswer: Math.round(Math.random() * 100) + 1
+        });
+    }
+
+
 
     if (action.type === GENERATE_AURAL_UPDATE) {
-        const pluralize = action.guesses.length !== 1;
-
-        let  auralStatus = `Here's the status of the game right now: [action.feedback] You've made [action.guesses.lengt] ${pluralize ? 'guesses' : 'guess'}.`;
-
-        if (action.guesses.length > 0) {
-            auralStatus += ` ${pluralize ? 'In order of most- to least-recent, they are' : 'It was'}: ${guesses.reverse().join(', ')}`;
+        // const { guesses, feedback } = this.state;
+        const { guesses, feedback } = state;
+        const pluralize = guesses.length !== 1;
+    
+        let  auralStatus = `Here's the status of the game right now: ${feedback} You've made ${guesses.length} ${pluralize ? 'guesses' : 'guess'}.`;
+    
+        if (guesses.length > 0) {
+          auralStatus += ` ${pluralize ? 'In order of most- to least-recent, they are' : 'It was'}: ${guesses.reverse().join(', ')}`;
         }
-
-        this.setState({ auralStatus });
+    
+        // this.setState({ auralStatus });
         return Object.assign({}, state, {
-            
+            auralStatus
         });
     }
 
