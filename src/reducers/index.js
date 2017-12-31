@@ -1,7 +1,7 @@
 import { MAKE_GUESS, RESTART_GAME, GENERATE_AURAL_UPDATE } from '../actions';
 
 const initialState = {
-    guesses: [1, 50, 30],
+    guesses: [],
     feedback: 'Make your guess!',
     auralStatus: '',
     correctAnswer: Math.round(Math.random() * 100) + 1
@@ -59,7 +59,7 @@ export default function gameReducer(state=initialState, action) {
         if (guesses.length > 0) {
           auralStatus += ` ${pluralize ? 'In order of most- to least-recent, they are' : 'It was'}: ${guesses.reverse().join(', ')}`;
         }
-        
+
         return Object.assign({}, state, {
             auralStatus
         });
