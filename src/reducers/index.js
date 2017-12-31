@@ -40,11 +40,12 @@ export default function gameReducer(state=initialState, action) {
 
 
     if (action.type === RESTART_GAME) {
+        console.log(action.correctAnswer);
         return Object.assign({}, state, {
             guesses: [],
             feedback: 'Make your guess!',
             auralStatus: '',
-            correctAnswer: Math.round(Math.random() * 100) + 1
+            correctAnswer: action.correctAnswer
         });
     }
 
