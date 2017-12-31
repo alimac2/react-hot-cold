@@ -51,7 +51,6 @@ export default function gameReducer(state=initialState, action) {
 
 
     if (action.type === GENERATE_AURAL_UPDATE) {
-        // const { guesses, feedback } = this.state;
         const { guesses, feedback } = state;
         const pluralize = guesses.length !== 1;
     
@@ -60,8 +59,7 @@ export default function gameReducer(state=initialState, action) {
         if (guesses.length > 0) {
           auralStatus += ` ${pluralize ? 'In order of most- to least-recent, they are' : 'It was'}: ${guesses.reverse().join(', ')}`;
         }
-    
-        // this.setState({ auralStatus });
+        
         return Object.assign({}, state, {
             auralStatus
         });
