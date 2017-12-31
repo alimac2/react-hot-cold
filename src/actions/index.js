@@ -1,7 +1,7 @@
 export const MAKE_GUESS = "MAKE_GUESS";
 export const makeGuess = (guess) => ({
     type: MAKE_GUESS,
-    guess,
+    guess
 });
 /* should feeback be a property of makeGuess? Where is guess being used if the state has guesses as a property?
 
@@ -18,7 +18,6 @@ export const restartGame = () => ({
 
 export const GENERATE_AURAL_UPDATE  = "GENERATE_AURAL_UPDATE";
 export const generateAuralUpdate = () => ({
-    type: GENERATE_AURAL_UPDATE,
-    auralStatus
+    type: GENERATE_AURAL_UPDATE
 });
 /* should auralStatus be here? I don't understand why or why not. */
