@@ -47,4 +47,4 @@ export function TopNav(props) {
 //   auralStatus
 // });
 
-export default connect(mapStateToProps)(TopNav);
+export default connect()(TopNav);
