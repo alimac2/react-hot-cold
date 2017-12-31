@@ -10,19 +10,13 @@ const initialState = {
 export default function gameReducer(state=initialState, action) {
     if (action.type === MAKE_GUESS ) {
         const guessArr = [...state.guesses, action.guess];
-        
-        // guess = parseInt(guess, 10);
-        // if (isNaN(guess)) {
-        //   this.setState({ feedback: 'Please enter a valid number' });
-        //   return;
-        // }
 
-        guess = parseInt(guess, 10);
+        const guess = parseInt(action.guess, 10);
         if (isNaN(guess)) {
             feedback = 'Please enter a valid number';
         };
 
-        const difference = Math.abs(guess - this.state.correctAnswer);
+        const difference = Math.abs(guess - state.correctAnswer);
     
         let feedback;
         if (difference >= 50) {
