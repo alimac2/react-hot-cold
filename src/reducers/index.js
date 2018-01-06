@@ -37,8 +37,6 @@ export default function gameReducer(state=initialState, action) {
         });
     }
 
-
-
     if (action.type === RESTART_GAME) {
         console.log(action.correctAnswer);
         return Object.assign({}, state, {
@@ -48,8 +46,6 @@ export default function gameReducer(state=initialState, action) {
             correctAnswer: action.correctAnswer
         });
     }
-
-
 
     if (action.type === GENERATE_AURAL_UPDATE) {
         const { guesses, feedback } = state;
